@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "784979417734",
+    "project_id": "najlepsze-jedzenie-654321",
+    "storage_bucket": "najlepsze-jedzenie-654321.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:784979417734:android:af1babfeb4a0ed752b4f07",
+        "android_client_info": {
+          "package_name": "com.jakubapola.najlepsze_jedzenie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "784979417734-cfr48jdv7l4s3ji7t3rq15bbb8bkdmv1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByIXOEhiM-OmNN7Okw74CoCl7_qpdBg6A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "784979417734-cfr48jdv7l4s3ji7t3rq15bbb8bkdmv1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
