@@ -27,20 +27,47 @@ class RestaurantsPageContent extends StatelessWidget {
           return ListView(
             children: [
               for (final document in documents) ...[
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(document['name']),
-                          Text(document['danie']),
-                        ],
+                Dismissible(
+                  key: ValueKey(document.id),
+                  onDismissed: (_) {
+                    FirebaseFirestore.instance
+                        .collection('restaurants')
+                        .doc(document.id)
+                        .delete();
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.all(10),
+                    margin: const EdgeInsets.all(10),
+                    decoration: const BoxDecoration(
+                      color: Colors.amber,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(20),
                       ),
-                      Text(document['rating'].toString()),
-                    ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(document['name']),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(document['danie']),
+                          ],
+                        ),
+                        Text(document['rating'].toString()),
+                        GestureDetector(
+                            onTap: () {
+                              FirebaseFirestore.instance
+                                  .collection('restaurants')
+                                  .doc(document.id)
+                                  .delete();
+                            },
+                            child: const Icon(Icons.delete)),
+                      ],
+                    ),
                   ),
                 ),
               ],

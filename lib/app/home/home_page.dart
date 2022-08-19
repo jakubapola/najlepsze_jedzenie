@@ -25,22 +25,31 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Najlepsze jedzenie'),
       ),
-      body: Builder(builder: (context) {
-        if (currentIndex == 0) {
-          return const RestaurantsPageContent();
-        }
-        if (currentIndex == 1) {
-          return AddOpinionPageContent(
-            onSave: () {
-              setState(() {
-                currentIndex = 0;
-              });
-            },
-          );
-        }
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            opacity: 0.4,
+            image: AssetImage("images/background_image.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Builder(builder: (context) {
+          if (currentIndex == 0) {
+            return const RestaurantsPageContent();
+          }
+          if (currentIndex == 1) {
+            return AddOpinionPageContent(
+              onSave: () {
+                setState(() {
+                  currentIndex = 0;
+                });
+              },
+            );
+          }
 
-        return MyAccountPageContent(email: widget.user.email);
-      }),
+          return MyAccountPageContent(email: widget.user.email);
+        }),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         onTap: (newIndex) {
