@@ -38,9 +38,9 @@ class RestaurantsPageContent extends StatelessWidget {
                   child: Container(
                     padding: const EdgeInsets.all(10),
                     margin: const EdgeInsets.all(10),
-                    decoration: const BoxDecoration(
-                      color: Colors.amber,
-                      borderRadius: BorderRadius.all(
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.7),
+                      borderRadius: const BorderRadius.all(
                         Radius.circular(20),
                       ),
                     ),
@@ -58,14 +58,18 @@ class RestaurantsPageContent extends StatelessWidget {
                           ],
                         ),
                         Text(document['rating'].toString()),
-                        GestureDetector(
-                            onTap: () {
+                        ElevatedButton.icon(
+                            style: ElevatedButton.styleFrom(
+                                primary: Colors.white.withOpacity(0.1),
+                                padding: EdgeInsets.zero),
+                            onPressed: () {
                               FirebaseFirestore.instance
                                   .collection('restaurants')
                                   .doc(document.id)
                                   .delete();
                             },
-                            child: const Icon(Icons.delete)),
+                            icon: const Icon(Icons.delete_rounded),
+                            label: const Text('')),
                       ],
                     ),
                   ),

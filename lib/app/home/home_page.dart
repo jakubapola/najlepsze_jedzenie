@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.lightBlue.withOpacity(0.5),
         title: const Text('Najlepsze jedzenie'),
       ),
       body: Container(
