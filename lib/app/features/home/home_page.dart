@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:najlepsze_jedzenie/app/home/add_opinion/add_opinion_page_content.dart';
-import 'package:najlepsze_jedzenie/app/home/my_account/my_account_page_content.dart';
-import 'package:najlepsze_jedzenie/app/home/restaurants/restautants_page_content.dart';
+import 'package:najlepsze_jedzenie/app/features/home/add_opinion/add_opinion_page_content.dart';
+import 'package:najlepsze_jedzenie/app/features/home/my_account/my_account_page_content.dart';
+import 'package:najlepsze_jedzenie/app/features/home/restaurants/restautants_page_content.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({
